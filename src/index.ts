@@ -10,6 +10,8 @@ async function run() {
   const labels = getInputLabels();
   const result = labels.every((label) => labelNames.includes(label));
   core.setOutput("result", result);
+  core.setOutput("labelNames", labelNames);
+  core.setOutput("labels", labels);
 }
 
 async function getPullRequestLabelNames(
